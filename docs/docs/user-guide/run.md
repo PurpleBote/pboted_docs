@@ -27,6 +27,12 @@ sudo mkdir /var/log/pboted
 sudo chown -R pboted: /var/log/pboted
 ```
 
+- Copy `logrotate` configuration file for logs rotation
+
+```
+sudo cp contrib/pboted.logrotate /etc/logrotate.d/pboted
+```
+
 - Copy example `systemd` service file, reload daemons configuration, and start unit:
 
 ```

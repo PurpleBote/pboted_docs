@@ -49,7 +49,7 @@ make                    # You may add VERBOSE=1 to cmdline for debugging
 Available CMake options(each option has a form of `-D<key>=<value>`, for more information see `man 1 cmake`):
 
 * `CMAKE_BUILD_TYPE` build profile (Debug/Release, default: no optimization or debug symbols)
-* `WITH_STATIC`      build static versions of library and i2pd binary (default: OFF)
+* `WITH_STATIC`      build static pboted binary (default: OFF)
 
 Also there is `-L` flag for CMake that could be used to list current cached options:
 
