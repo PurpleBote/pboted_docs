@@ -8,19 +8,20 @@ Run `pboted --help` to show builtin help message.
 
     `service` option are only used as argument for pboted, these option have no effect when set in `pboted.conf`.
 
-| Option     | Description                                                                                              | Default                                                |
-|------------|----------------------------------------------------------------------------------------------------------|--------------------------------------------------------|
-| daemon     | pboted will go to background after start                                                                 | no                                                     |
-| service    | pboted will use system folders like `/var/lib/pboted`                                                    | no                                                     |
-| conf       | Config file. This parameter will be silently ignored if the specified config file does not exist.        | `~/.pboted/pboted.conf` or `/etc/pboted/pboted.conf`   |
-| pidfile    | Where to write pidfile                                                                                   | `~/.pboted/pboted.pid` or `/var/lib/pboted/pboted.pid` |
-| log        | Logs destination: `stdout`, `file`, `syslog` (if daemon, `stdout`/`unspecified` are replaced by `file` in some cases) | `stdout` if not set or invalid            |
-| logfile    | Path to logfile                                                                                          | autodetect                                             |
-| loglevel   | Log messages above this level (`debug`, `info`, `warn`, `error`, `none`)                                 | `info`                                                 |
-| logclftime | Write full CLF-formatted date and time to log (default: write only time)                                 | no                                                     |
-| host       | External IP for incoming connections                                                                     | `0.0.0.0`                                              |
-| port       | UDP port to listen for incoming connections                                                              | `5050`                                                 |
-| storage    | Limit for local storage usage (`B`, `KiB`, `MiB`, `GiB`, `TiB`)                                          | `50 MiB`                                               |
+| Option        | Description                                                                                              | Default                                                |
+|---------------|----------------------------------------------------------------------------------------------------------|--------------------------------------------------------|
+| daemon        | pboted will go to background after start                                                                 | no                                                     |
+| service       | pboted will use system folders like `/var/lib/pboted`                                                    | no                                                     |
+| conf          | Config file. This parameter will be silently ignored if the specified config file does not exist.        | `~/.pboted/pboted.conf` or `/etc/pboted/pboted.conf`   |
+| pidfile       | Where to write pidfile                                                                                   | `~/.pboted/pboted.pid` or `/var/lib/pboted/pboted.pid` |
+| log           | Logs destination: `stdout`, `file`, `syslog` (if daemon, `stdout`/`unspecified` are replaced by `file` in some cases) | `stdout` if not set or invalid            |
+| logfile       | Path to logfile                                                                                          | autodetect                                             |
+| loglevel      | Log messages above this level (`debug`, `info`, `warn`, `error`, `none`)                                 | `info`                                                 |
+| logclftime    | Write full CLF-formatted date and time to log (default: write only time)                                 | no                                                     |
+| host          | External IP for incoming connections                                                                     | `0.0.0.0`                                              |
+| port          | UDP port to listen for incoming connections                                                              | `5050`                                                 |
+| storage       | Limit for local storage usage (`B`, `KiB`, `MiB`, `GiB`, `TiB`)                                          | `50 MiB`                                               |
+| cleaninterval | Duration in days of node/peer unavailability after which it will be deleted                              | `7`                                                    |
 
 ## SAM
 
