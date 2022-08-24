@@ -27,6 +27,12 @@ sudo mkdir /var/log/pboted
 sudo chown -R pboted: /var/log/pboted
 ```
 
+- Скопируйте образец `logrotate` конфигурации для ротации логов:
+
+```
+sudo cp contrib/pboted.logrotate /etc/logrotate.d/pboted
+```
+
 - Скопируйте образец `systemd` Unit-файла, перезагрузите конфигурацию `systemd` сервисов и запустите приложение:
 
 ```
