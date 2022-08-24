@@ -54,11 +54,15 @@ Storage format for the `Incomplete Email`
 
 Supported algorithms may differ depending on the implementation. 
 
-| Value | Description    | Java Bote | pboted                 |
-|-------|----------------|-----------|------------------------|
-| `0`   | Uncompressed   | yes       | yes (to old addresses) |
-| `1`   | LZMA           | yes       | yes (receive only)     |
-| `2`   | ZLIB `[VER 5]` | no        | yes (to new addresses) |
+| Value | Description      | Java Bote | pboted                 |
+|-------|------------------|-----------|------------------------|
+| `0`   | Uncompressed     | yes       | yes (to old addresses) |
+| `1`   | LZMA             | yes       | yes (receive only)     |
+| `2`   | ZLIB `[VER 5]`   | no        | yes (to new addresses) |
+| `3`   | BZIP2 `[VER 5]`  | no        | no                     |
+| `4`   | ZSTD `[VER 5]`   | no        | no                     |
+| `5`   | LZ4 `[VER 5]`    | no        | no                     |
+| `6`   | Snappy `[VER 5]` | no        | no                     |
 
 ### 1.3 Index Packet
 
