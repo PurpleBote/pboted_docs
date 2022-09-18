@@ -10,8 +10,16 @@ You can only continue to use your `Email identities` from **Java Bote** if:
     - `ECDH-521/ECDSA-521/AES-256/SHA-512` 
 - identities file is not encrypted (encrypted files are not supported yet)
 
-## Create Bote identity
+## Create Email identity
 
+!!! note "Note"
+
+    After making changes to `identities.txt` file the application must be restarted
+
+**Email identity** in I2P-Bote network is the equivalent of a **mailbox** in regular email.
+After its creation, you will be able to send and receive emails.
+
+Before you get started, you need to create an email identity yourself.
 See [create_identity](https://github.com/polistern/pboted-tools/tree/main/create_identity)
 
 ## Sending email

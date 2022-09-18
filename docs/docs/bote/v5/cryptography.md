@@ -9,7 +9,7 @@ Encryption and signature algorithms:
 | 1  | ElGamal-2048     | DSA-1024    | AES-256   | SHA-256 | active    | never (deprecated) |
 | 2  | ECDH-256         | ECDSA-256   | AES-256   | SHA-256 | active    | active             |
 | 3  | ECDH-521         | ECDSA-521   | AES-256   | SHA-512 | active    | active             |
-| 4  | NTRUEncrypt-1087 | GMSS-512    | AES-256   | SHA-512 | active    | no                 |
+| 4  | NTRUEncrypt-1087 | GMSS-512    | AES-256   | SHA-512 | active    | soon               |
 | 5  | X25519           | ED25519     | AES-256   | SHA-512 | no        | active             |
 
 ## 2. Email Identity Formats
