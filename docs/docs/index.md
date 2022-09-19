@@ -23,12 +23,12 @@ Transition to **beta** planned in version **0.9.X**
 - Runnable as UNIX daemon
 - [CLI utility](https://github.com/polistern/pbotectl) (work in progress)
 - SMTP / POP3 support (tested with [Mozilla Thunderbird](https://www.thunderbird.net/en-US/))
+- Delivery confirmation
 
 ## Planned Features
 
 - Custom per identity/user email folders
 - Sending email anonymously
-- Delivery confirmation
 - Sending and receiving via relays (similar to Mixmaster)
 - Interfaces for interaction with third-party applications (IMAP, etc.)
 

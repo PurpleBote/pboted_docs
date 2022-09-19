@@ -61,7 +61,7 @@ Also there is `-L` flag for CMake that could be used to list current cached opti
 
 !!! note "Note"
 
-    Tested with Debian 10 and Ubuntu 20.04.
+    Tested with Debian 10 and Ubuntu 20.04
 
 You will need a compiler and other tools that could be installed with `build-essential` and `debhelper` packages:
 
