@@ -32,10 +32,8 @@ See [create_identity](https://github.com/polistern/pboted-tools/tree/main/create
 - Follow headers will be added to the file after initial processing:
     - `X-HashCash`
     - `X-I2PBote-Signature`
-- If file sent successfully follow headers will be added to the file:
-    - `X-I2PBote-DHT-Key`
-    - `X-I2PBote-Delete-Auth-Hash`
-- File will be moved to `sent` directory
+- Will be created `<Message-ID>.meta` service information file in `outbox` directory
+- If mail sent successfully files `<Message-ID>.mail` and `<Message-ID>.meta` will be moved to `sent` directory
 
 ### SMTP
 
