@@ -3,8 +3,8 @@ site_url: https://pboted.readthedocs.io
 site_description: pboted documentation
 site_author: polistern
 
-repo_url: https://github.com/polistern/pboted_docs
-repo_name: polistern/pboted_docs
+repo_url: https://github.com/PurpleBote/pboted_docs
+repo_name: PurpleBote/pboted_docs
 
 nav:
 - Home: index.md

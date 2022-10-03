@@ -46,7 +46,7 @@ Run `pboted --help` to show builtin help message.
 You can specify this parameter multiple times with different addresses.  
 For example: 
 
-```
+```ini
 [bootstrap]
 address = <first address>
 address = <second address>

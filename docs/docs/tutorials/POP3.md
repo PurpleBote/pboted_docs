@@ -6,7 +6,7 @@ To be able to receive email through POP3 you need to:
 
 - Fill `[pop3]` section in [configuration file](../user-guide/configuration.md#pop3):
 
-```
+```ini
 [pop3]
 enabled = true
 address = 127.0.0.1

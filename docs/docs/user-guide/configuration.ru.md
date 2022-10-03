@@ -46,7 +46,7 @@
 Вы можете указать этот параметр многократно для разных адресов.  
 Например:
 
-```
+```ini
 [bootstrap]
 address = <first address>
 address = <second address>

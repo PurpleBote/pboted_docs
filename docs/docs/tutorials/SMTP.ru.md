@@ -6,7 +6,7 @@ _Работа проверена с [Mozilla Thunderbird](https://www.thunderbir
 
 - Заполнить секцию `[smtp]` в [конфигурационном файле](../user-guide/configuration.md#smtp)
 
-```
+```ini
 [smtp]
 enabled = true
 address = 127.0.0.1

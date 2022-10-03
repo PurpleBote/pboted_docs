@@ -6,7 +6,7 @@ _Работа проверена с [Mozilla Thunderbird](https://www.thunderbir
 
 - Заполнить секцию `[pop3]` в [конфигурационном файле](../user-guide/configuration.md#pop3):
 
-```
+```ini
 [pop3]
 enabled = true
 address = 127.0.0.1

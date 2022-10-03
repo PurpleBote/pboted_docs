@@ -11,7 +11,7 @@
 
 - Create `/etc/pboted` directory and copy example config:
 
-```
+```bash
 sudo mkdir /etc/pboted
 sudo cp contrib/pboted.conf /etc/pboted/pboted.conf
 ```
@@ -19,7 +19,7 @@ sudo cp contrib/pboted.conf /etc/pboted/pboted.conf
 - Edit the config to suit your needs. The file is well documented, comments will help you.
 - Create user, data and logs directories:
 
-```
+```bash
 sudo useradd pboted -r -s /usr/sbin/nologin
 sudo mkdir /var/lib/pboted
 sudo chown -R pboted: /var/lib/pboted
@@ -29,13 +29,13 @@ sudo chown -R pboted: /var/log/pboted
 
 - Copy `logrotate` configuration file for logs rotation
 
-```
+```bash
 sudo cp contrib/pboted.logrotate /etc/logrotate.d/pboted
 ```
 
 - Copy example `systemd` service file, reload daemons configuration, and start unit:
 
-```
+```bash
 sudo cp contrib/pboted.service /lib/systemd/system/pboted.service
 sudo systemctl daemon-reload
 sudo systemctl start pboted.service
@@ -47,7 +47,7 @@ sudo systemctl start pboted.service
 
 - Create `~/.pboted` directory and сopy example config from `contrib/pboted.conf` to `~/.pboted/pboted.conf`:
 
-```
+```bash
 mkdir ~/.pboted
 cp contrib/pboted.conf ~/.pboted/pboted.conf
 ```
@@ -55,6 +55,6 @@ cp contrib/pboted.conf ~/.pboted/pboted.conf
 - Edit the config to suit your needs. The file is well documented, comments will help you.
 - Now you can run application:
 
-```
+```bash
 ./pboted
 ```

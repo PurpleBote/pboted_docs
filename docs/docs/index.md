@@ -1,6 +1,9 @@
 # pboted
 
-pboted (Plus Bote Daemon) - is a standalone C++ implementation of I2P-Bote protocol.
+* [clearnet](https://pboted.readthedocs.io/en/latest/)
+* [I2P](http://polistern.i2p/pbote/)
+
+**pboted** (_Plus Bote Daemon_) - is a standalone C++ implementation of `I2P-Bote` protocol.
 
 I2P-Bote is a server-less encrypted [DHT Kademlia](https://en.wikipedia.org/wiki/Distributed_hash_table)-based email protocol.   
 You can find more details it [Bote](bote/v5/version5.md) section.
@@ -27,7 +30,7 @@ Transition to **beta** planned in version **0.9.X**
 
 ## Planned Features
 
-- Custom per identity/user email folders
+- Custom per identity/user email folders (WIP)
 - Sending email anonymously
 - Sending and receiving via relays (similar to Mixmaster)
 - Interfaces for interaction with third-party applications (IMAP, etc.)

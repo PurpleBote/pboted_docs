@@ -6,7 +6,7 @@ To be able to send email through SMTP you need to:
 
 - Fill `[smtp]` section in [configuration file](../user-guide/configuration.md#smtp):
 
-```
+```ini
 [smtp]
 enabled = true
 address = 127.0.0.1

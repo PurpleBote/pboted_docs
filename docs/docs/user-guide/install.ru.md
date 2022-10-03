@@ -10,11 +10,11 @@
 
 Для сборки **pboted** Вам необходимы:
 
-* компилятор с поддержкой страндарта c++17 (например: gcc >= 5, clang)
+* компилятор с поддержкой страндарта c++17 (например: gcc >= 5, clang >= 5)
 * cmake >= 3.7
 * mimetic >= 0.9.8
-* boost >= 1.62
-* openssl library
+* boost >= 1.62 (filesystem и program_options)
+* openssl >= 1.1.1
 * zlib (openssl уже имеет её в зависимостях)
 
 ## Сборка на UNIX-подобных системах
@@ -30,15 +30,14 @@
 
 - Клонируйте репозиторий:
 
-```
+```bash
 git clone https://github.com/polistern/pboted.git
 cd pboted
-git submodule update --init
 ```
 
 - Скомпилируйте:
 
-```
+```bash
 cd build
 cmake <cmake options> . # Смотри секцию "Опции CMake" ниже
 make                    # Для отладки можно добавить VERBOSE=1
@@ -53,8 +52,20 @@ make                    # Для отладки можно добавить VERB
 
 Для CMake доступен флаг `-L` для просмотра текущих опций сборки:
 
+```bash
+cmake -L
 ```
-  cmake -L
+
+#### Принудительно использовать GCC
+
+```bash
+CC=gcc CXX=g++ cmake .
+```
+
+#### Принудительно использовать Clang
+
+```bash
+CC=clang CXX=clang++ cmake .
 ```
 
 ### Debian/Ubuntu:
@@ -65,19 +76,16 @@ make                    # Для отладки можно добавить VERB
 
 Вам необходимы компилятор и другие утилиты, которые могут быть установлены с пакетами `build-essential` и `debhelper`:
 
-```
+```bash
 sudo apt install git cmake build-essential debhelper
 ```
 
 Также вам понадобятся библиотеки разработки:
 
-```
+```bash
 sudo apt install \
-  libboost-date-time-dev \
   libboost-filesystem-dev \
   libboost-program-options-dev \
-  libboost-system-dev \
-  libboost-thread-dev \
   libmimetic-dev \
   libssl-dev \
   pkg-config \
@@ -86,8 +94,8 @@ sudo apt install \
 
 Доступна возможность собрать DEB пакет самостоятельно:
 
-```
-  sudo apt install fakeroot devscripts dh-apparmor
-  cd pboted
-  debuild --no-tgz-check -us -uc -b
+```bash
+sudo apt install fakeroot devscripts dh-apparmor
+cd pboted
+debuild --no-tgz-check -us -uc -b
 ```

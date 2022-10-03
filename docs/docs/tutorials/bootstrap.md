@@ -28,7 +28,7 @@ To use this option, you need in the configuration file:
 
 For example:
 
-```
+```ini
 [bootstrap]
 ## Bootstrap operators;
 ## Each line should be a I2P destination key in Base64 format. Lines beginning with # are ignored.

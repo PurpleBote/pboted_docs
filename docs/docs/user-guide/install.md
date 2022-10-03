@@ -10,12 +10,12 @@ You can install binary packages from the [latest release page](https://github.co
 
 For building **pboted** you need several things:
 
-* compiler with c++17 support (for example: gcc >= 5, clang)
+* compiler with c++17 support (for example: gcc >= 5, clang >= 5)
 * cmake >= 3.7
 * mimetic >= 0.9.8
-* boost >= 1.62
-* openssl library
-* zlib library (openssl already depends on it)
+* boost >= 1.62 (filesystem and program_options)
+* openssl >= 1.1.1
+* zlib (openssl already depends on it)
 
 ## Building on UNIX-like systems
 
@@ -30,15 +30,14 @@ See for common requirements in [this](#requirements) section.
 
 - Clone repository:
 
-```
+```bash
 git clone https://github.com/polistern/pboted.git
 cd pboted
-git submodule update --init
 ```
 
 - Build:
 
-```
+```bash
 cd build
 cmake <cmake options> . # See "CMake Options" section below
 make                    # You may add VERBOSE=1 to cmdline for debugging
@@ -53,8 +52,20 @@ Available CMake options(each option has a form of `-D<key>=<value>`, for more in
 
 Also there is `-L` flag for CMake that could be used to list current cached options:
 
+```bash
+cmake -L
 ```
-  cmake -L
+
+#### Force GCC
+
+```bash
+CC=gcc CXX=g++ cmake .
+```
+
+#### Force Clang
+
+```bash
+CC=clang CXX=clang++ cmake .
 ```
 
 ### Debian/Ubuntu:
@@ -65,19 +76,16 @@ Also there is `-L` flag for CMake that could be used to list current cached opti
 
 You will need a compiler and other tools that could be installed with `build-essential` and `debhelper` packages:
 
-```
+```bash
 sudo apt install git cmake build-essential debhelper
 ```
 
 Also you will need a bunch of development libraries:
 
-```
+```bash
 sudo apt install \
-  libboost-date-time-dev \
   libboost-filesystem-dev \
   libboost-program-options-dev \
-  libboost-system-dev \
-  libboost-thread-dev \
   libmimetic-dev \
   libssl-dev \
   pkg-config \
@@ -86,8 +94,8 @@ sudo apt install \
 
 You may also build DEB-package with the following:
 
-```
-  sudo apt install fakeroot devscripts dh-apparmor
-  cd pboted
-  debuild --no-tgz-check -us -uc -b
+```bash
+sudo apt install fakeroot devscripts dh-apparmor
+cd pboted
+debuild --no-tgz-check -us -uc -b
 ```

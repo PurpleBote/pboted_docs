@@ -12,7 +12,7 @@
 
 Однострочные сообщения подходят для малых изменний, но большие должны форматироваться следующим образом:
 
-```
+```bash
 $ git commit -m "A brief summary of the commit
 >
 > A paragraph describing what changed and its impact."
