@@ -1,6 +1,6 @@
 # Glossary of Terms
 
-## `Email Destination`
+## Email Destination
 
 As the name implies, an `Email Destination` is an identifier by which somebody can be reached via I2P-Bote.
 
