@@ -202,16 +202,16 @@ ToDo: add info about alg-specific prefixes
 
 Не является пакетом сама по себе. Только как часть `Запроса реле` или `Запроса на возврат реле`.
 
-| Поле    | Размер         | Описание                                          |
-|---------|----------------|---------------------------------------------------|
-| `RL1`   | 2 bytes        | Длина поля `RET1`. Ноль означает, что цепь пуста. |
+| Поле    | Размер         | Описание                                                      |
+|---------|----------------|---------------------------------------------------------------|
+| `RL1`   | 2 bytes        | Длина поля `RET1`. Ноль означает, что цепь пуста.             |
 | `RET1`  | `RL1` bytes    | Хоп 1 в цепочке возрата. Contains a zero byte, followed by the hop's `I2P destination` and an AES key to encrypt the payload with. |
-| `RL2`   | 2 bytes `E`    | Length of `RET2`                                  |
+| `RL2`   | 2 bytes `E`    | Length of `RET2`                                              |
 | `RET2`  | `RL2` bytes `E`| Hop 2 in the return chain. Contains a zero byte, followed by the hop's `I2P destination` and an AES key to encrypt the payload with. This field is encrypted with the PK of hop 2. |
-| `RL3`   | 2 bytes   `E`  | Length of `RET3`                                  |
+| `RL3`   | 2 bytes   `E`  | Length of `RET3`                                              |
 | `RET3`  | `RL3` bytes `E`| Hop 3 in the return chain. Contains a zero byte, followed by the hop's `I2P destination` and an AES key to encrypt the payload with. This field is encrypted with the PKs of hops 3 and 2. |
-| ...     | ...            | ...                                               |
-| `RLn`   | 2 bytes   `E`  | Length of `RETn`                                  |
+| ...     | ...            | ...                                                           |
+| `RLn`   | 2 bytes   `E`  | Length of `RETn`                                              |
 | `RETn`  | `RLn` bytes `E`| Last hop in the return chain. Contains a zero byte, followed by the hop's `I2P destination` and an AES key to encrypt the payload with. This field is encrypted with the PKs of hops n...2. |
 | `RLn+1` | 2 bytes   `E`  | Length of `RETn+1`                                            |
 | `RETn+1`| `RLn+1` byt `E`| Number of hops (>0) followed by all AES256 keys (one per hop) |
@@ -355,20 +355,20 @@ ToDo: add info about alg-specific prefixes
 
 `Пакет ответа` с корректным статусом ожидается в ответ. `[VER 5]`
 
-| Поле    | Размер     | Описание                                                                                                             |
-|---------|------------|----------------------------------------------------------------------------------------------------------------------|
-| `PFX`   | 4 bytes    | Префикс, должен быть `0x6D 0x30 0x52 0xE9`.                                                                          |
-| `TYPE`  | 1 byte     | Значение = `'X'`                                                                                                     |
-| `VER`   | 1 byte     | Версия протокола.                                                                                                    |
-| `CID`   | 32 bytes   | Идентификатора сессии, используется для ответов.                                                                     |
-| `DH`    | 32 bytes   | SHA-256 хэш Почтового назначения (имя Индексного пакета)                                                             |
-| `N`     | 1 byte     | Число записей                                                                                                        |
-| `DHT1`  | 32 bytes   | Первый DHT-ключ на удаление                                                                                          |
+| Поле    | Размер     | Описание                                                                                                                   |
+|---------|------------|----------------------------------------------------------------------------------------------------------------------------|
+| `PFX`   | 4 bytes    | Префикс, должен быть `0x6D 0x30 0x52 0xE9`.                                                                                |
+| `TYPE`  | 1 byte     | Значение = `'X'`                                                                                                           |
+| `VER`   | 1 byte     | Версия протокола.                                                                                                          |
+| `CID`   | 32 bytes   | Идентификатора сессии, используется для ответов.                                                                           |
+| `DH`    | 32 bytes   | SHA-256 хэш Почтового назначения (имя Индексного пакета)                                                                   |
+| `N`     | 1 byte     | Число записей                                                                                                              |
+| `DHT1`  | 32 bytes   | Первый DHT-ключ на удаление                                                                                                |
 | `DA1`   | 32 bytes   | `Авторизация Удаления` (SHA-256 должен соответствовать значению `Подтверждения Удаления` из `Почтового пакета` для `DHT1`) |
-| `DHT2`  | 32 bytes   | Второй DHT-ключ на удаление                                                                                           |
+| `DHT2`  | 32 bytes   | Второй DHT-ключ на удаление                                                                                                |
 | `DA2`   | 32 bytes   | `Авторизация Удаления` (SHA-256 должен соответствовать значению `Подтверждения Удаления` из `Почтового пакета` для `DHT2`) |
-| ...     | ...        | ...                                                                                                                  |
-| `DHTn`  | 32 bytes   | n-ый DHT-ключ на удаление                                                                                             |
+| ...     | ...        | ...                                                                                                                        |
+| `DHTn`  | 32 bytes   | n-ый DHT-ключ на удаление                                                                                                  |
 | `DAn`   | 32 bytes   | `Авторизация Удаления` (SHA-256 должен соответствовать значению `Подтверждения Удаления` из `Почтового пакета` для `DHTn`) |
 
 ### 3.6 Запрос ближайших узлов

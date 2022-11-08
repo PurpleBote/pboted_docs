@@ -21,7 +21,11 @@ You can find information about `Bote Identity` in [Cryptography](../bote/v5/cryp
 
 The identities file can optionally contain the property key `default`, with its value set to an `Email Destination`.
 
-### Password Encryption
+## Address Book
+
+See [Address Book](addressbook.md).
+
+## Password Encryption
 
 The identities file, the address book, and all email files are encrypted with AES-256.   
 To generate the AES key from the password, scrypt (http://www.tarsnap.com/scrypt.html) is used.   

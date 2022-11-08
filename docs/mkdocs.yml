@@ -21,6 +21,7 @@ nav:
   - SMTP: tutorials/SMTP.md
   - POP3: tutorials/POP3.md
   - Configuring the mail client: tutorials/mail_client.md
+  - Control: tutorials/Control.md
 - Bote Protocol:
   - Version 5:
     - Description: bote/v5/version5.md
@@ -89,6 +90,7 @@ plugins:
           #SMTP:
           #POP3:
           Configuring the mail client: Настройка почтового клиента
+          #Control:
           Building from source: Сборка из исходников
           Bote Protocol: Протокол Bote
           Version 5: Версия 5

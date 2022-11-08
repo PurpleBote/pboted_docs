@@ -2,6 +2,10 @@
 
 _Tested with [Mozilla Thunderbird](https://www.thunderbird.net/en-US/)_
 
+!!! warning "Warning"
+
+    At the moment, using SMTP is only possible when filling out the [address book](addressbook.md).
+
 To be able to send email through SMTP you need to:
 
 - Fill `[smtp]` section in [configuration file](../user-guide/configuration.md#smtp):

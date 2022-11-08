@@ -13,7 +13,7 @@
 * компилятор с поддержкой страндарта c++17 (например: gcc >= 5, clang >= 5)
 * cmake >= 3.7
 * mimetic >= 0.9.8
-* boost >= 1.62 (filesystem и program_options)
+* boost >= 1.62 (program_options)
 * openssl >= 1.1.1
 * zlib (openssl уже имеет её в зависимостях)
 
@@ -23,7 +23,7 @@
 
 * GNU/Linux
     - [Debian/Ubuntu](#debian-ubuntu) (с созданием пакета)
-    - CentOS/RedHat
+    - CentOS/Fedora (WIP)
 
 Убедитесь, что все требуемые зависимости установлены.  
 Ознакомтесь с зависимостями в [этой](#Требования) секции.
@@ -50,6 +50,14 @@ make                    # Для отладки можно добавить VERB
 - `CMAKE_BUILD_TYPE` тип сборки (Debug/Release, по умолчанию: без оптимизаций и отладки)
 - `WITH_STATIC`      статичная сборка pboted (по умолчанию: OFF)
 
+| Параметр           | Описание                                  | По умолчанию                          |
+|--------------------|-------------------------------------------|---------------------------------------|
+| `CMAKE_BUILD_TYPE` | Тип сборки (Debug/Release)                | Без оптимизаций и отладки             |
+| `CONTROL_SOCKET`   | Использовать UNIX сокет в модуле PB_CTRL  | `ON`                                  |
+| `WITH_STATIC`      | Статичная сборка pboted                   | `OFF`                                 |
+| `WITH_CXX11`       | Принудительно использовать стандарт C++11 | `OFF` и максимально доступный из двух |
+| `WITH_CXX17`       | Принудительно использовать стандарт C++17 | `OFF` и максимально доступный из двух |
+
 Для CMake доступен флаг `-L` для просмотра текущих опций сборки:
 
 ```bash
@@ -68,7 +76,7 @@ CC=gcc CXX=g++ cmake .
 CC=clang CXX=clang++ cmake .
 ```
 
-### Debian/Ubuntu:
+### Debian/Ubuntu
 
 !!! note "Примечание"
 
@@ -84,7 +92,6 @@ sudo apt install git cmake build-essential debhelper
 
 ```bash
 sudo apt install \
-  libboost-filesystem-dev \
   libboost-program-options-dev \
   libmimetic-dev \
   libssl-dev \
@@ -99,3 +106,11 @@ sudo apt install fakeroot devscripts dh-apparmor
 cd pboted
 debuild --no-tgz-check -us -uc -b
 ```
+
+### CentOS/Fedora (WIP)
+
+WIP
+
+### Microsoft Windows
+
+WIP

@@ -2,6 +2,10 @@
 
 _Tested with [Mozilla Thunderbird](https://www.thunderbird.net/en-US/)_
 
+!!! note "Note"
+
+    For now, you can use any password, as it will be ignored on the **pboted** side.
+
 ## SMTP
 
 1. Turn on SMTP for [this](SMTP.md) instruction.
@@ -21,4 +25,6 @@ _Tested with [Mozilla Thunderbird](https://www.thunderbird.net/en-US/)_
 	- Connection security: None
 	- Authentication method: Password, transmitted insecurely
 
-For now, you can use any password, as it will be ignored on the **pboted** side.
+## IMAP
+
+Not supported for now.

@@ -13,7 +13,7 @@ For building **pboted** you need several things:
 * compiler with c++17 support (for example: gcc >= 5, clang >= 5)
 * cmake >= 3.7
 * mimetic >= 0.9.8
-* boost >= 1.62 (filesystem and program_options)
+* boost >= 1.62 (program_options)
 * openssl >= 1.1.1
 * zlib (openssl already depends on it)
 
@@ -23,7 +23,7 @@ For building **pboted** you need several things:
 
 * GNU/Linux
     - [Debian/Ubuntu](#debian-ubuntu) (with packaging)
-    - CentOS/RedHat
+    - CentOS/Fedora (WIP)
 
 Make sure you have all required dependencies successfully installed.  
 See for common requirements in [this](#requirements) section.
@@ -47,8 +47,13 @@ make                    # You may add VERBOSE=1 to cmdline for debugging
 
 Available CMake options(each option has a form of `-D<key>=<value>`, for more information see `man 1 cmake`):
 
-* `CMAKE_BUILD_TYPE` build profile (Debug/Release, default: no optimization or debug symbols)
-* `WITH_STATIC`      build static pboted binary (default: OFF)
+| Option             | Description                       | Default                              |
+|--------------------|-----------------------------------|--------------------------------------|
+| `CMAKE_BUILD_TYPE` | Build profile (Debug/Release)     | No optimization or debug symbols     |
+| `CONTROL_SOCKET`   | Use UNIX socket in control module | `ON`                                 |
+| `WITH_STATIC`      | Build static pboted binary        | `OFF`                                |
+| `WITH_CXX11`       | Force C++11                       | `OFF` and higher available from both |
+| `WITH_CXX17`       | Force C++17                       | `OFF` and higher available from both |
 
 Also there is `-L` flag for CMake that could be used to list current cached options:
 
@@ -68,7 +73,7 @@ CC=gcc CXX=g++ cmake .
 CC=clang CXX=clang++ cmake .
 ```
 
-### Debian/Ubuntu:
+### Debian/Ubuntu
 
 !!! note "Note"
 
@@ -84,7 +89,6 @@ Also you will need a bunch of development libraries:
 
 ```bash
 sudo apt install \
-  libboost-filesystem-dev \
   libboost-program-options-dev \
   libmimetic-dev \
   libssl-dev \
@@ -99,3 +103,11 @@ sudo apt install fakeroot devscripts dh-apparmor
 cd pboted
 debuild --no-tgz-check -us -uc -b
 ```
+
+### CentOS/Fedora (WIP)
+
+WIP
+
+### Microsoft Windows
+
+WIP

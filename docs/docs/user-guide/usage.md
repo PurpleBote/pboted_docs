@@ -61,3 +61,12 @@ If mail for identity are found, they will be placed in the `inbox` directory as 
 ### POP3
 
 See [POP3](../tutorials/POP3.md)
+
+## Third party applications
+
+You can use any third party application that supports **SMTP** and **POP3** protocols.
+
+Be aware that there is significant latency on the **I2P** network.  
+It also adds a delay from the **I2P-Bote** network itself.
+
+Otherwise, any application should treat **pboted** as normal email server.

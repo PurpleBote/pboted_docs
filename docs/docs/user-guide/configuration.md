@@ -22,6 +22,17 @@ Run `pboted --help` to show builtin help message.
 | port          | UDP port to listen for incoming connections                                                              | `5050`                                                 |
 | storage       | Limit for local storage usage (`B`, `KiB`, `MiB`, `GiB`, `TiB`)                                          | `50 MiB`                                               |
 | cleaninterval | Duration in days of node/peer unavailability after which it will be deleted                              | `7`                                                    |
+| coresize      | Maximum size of corefile in KiB (0 - use system limit)                                                   | Use system limit                                       |
+| openfiles     | Maximum number of open files (0 - use system limit)                                                      | Use system limit                                       |
+
+## Control
+
+| Option          | Description                                 | Default                                                |
+|-----------------|---------------------------------------------|--------------------------------------------------------|
+| control.enabled | Enable control                              | `true`                                                 |
+| control.socket  | Path to control socket (caution in Windows) | `~/pboted/pboted.sock` or `/var/lib/pboted/pbote.sock` |
+| control.address | Control listen address                      | `127.0.0.1`                                            |
+| control.port    | Control listen TCP port                     | `5055`                                                 |
 
 ## SAM
 

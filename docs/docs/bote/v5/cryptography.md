@@ -22,6 +22,8 @@ The previously used option for storing and passing `Email Destinations` and `Ema
 
 ### Version 0
 
+Used by **pboted** and **Java Bote**
+
 - An `Email Destination` is a Base64 string containing:
     - public encryption key;
     - public signature verification key.
@@ -34,24 +36,22 @@ The previously used option for storing and passing `Email Destinations` and `Ema
 Example of a 512-character `Email Destination` (ElGamal-2048/DSA-1024):
   
 ```
-  uQtdwFHqbWHGyxZN8wChjWbCcgWrKuoBRNoziEpE8XDt8koHdJiskYXeUyq7JmpG
-  In8WKXY5LNue~62IXeZ-ppUYDdqi5V~9BZrcbpvgb5tjuu3ZRtHq9Vn6T9hOO1fa
-  FYZbK-FqHRiKm~lewFjSmfbBf1e6Fb~FLwQqUBTMtKYrRdO1d3xVIm2XXK83k1Da
-  -nufGASLaHJfsEkwMMDngg8uqRQmoj0THJb6vRfXzRw4qR5a0nj6dodeBfl2NgL9
-  HfOLInwrD67haJqjFJ8r~vVyOxRDJYFE8~f9b7k3N0YeyUK4RJSoiPXtTBLQ2RFQ
-  gOaKg4CuKHE0KCigBRU-Fhhc4weUzyU-g~rbTc2SWPlfvZ6n0voSvhvkZI9V52X3
-  SptDXk3fAEcwnC7lZzza6RNHurSMDMyOTmppAVz6BD8PB4o4RuWq7MQcnF9znElp
+  uQtdwFHqbWHGyxZN8wChjWbCcgWrKuoBRNoziEpE8XDt8koHdJiskYXeUyq7JmpG  
+  In8WKXY5LNue~62IXeZ-ppUYDdqi5V~9BZrcbpvgb5tjuu3ZRtHq9Vn6T9hOO1fa  
+  FYZbK-FqHRiKm~lewFjSmfbBf1e6Fb~FLwQqUBTMtKYrRdO1d3xVIm2XXK83k1Da  
+  -nufGASLaHJfsEkwMMDngg8uqRQmoj0THJb6vRfXzRw4qR5a0nj6dodeBfl2NgL9  
+  HfOLInwrD67haJqjFJ8r~vVyOxRDJYFE8~f9b7k3N0YeyUK4RJSoiPXtTBLQ2RFQ  
+  gOaKg4CuKHE0KCigBRU-Fhhc4weUzyU-g~rbTc2SWPlfvZ6n0voSvhvkZI9V52X3  
+  SptDXk3fAEcwnC7lZzza6RNHurSMDMyOTmppAVz6BD8PB4o4RuWq7MQcnF9znElp  
   HX3Q10QdV3omVZJDNPxo-Wf~CpEd88C9ga4pS~QGIHSWtMPLFazeGeSHCnPzIRYD
 ```
 
 Example of a 86-character `Email Destination` (ECC-256):
 
 ```
-  1Lcvly8no5of6juJKxqy-xA-MStM2c2XKorepH1oqs5
+  1Lcvly8no5of6juJKxqy-xA-MStM2c2XKorepH1oqs5  
   yKBkg9-ZcG4G4kZY1E~2672cMA806l9EicQLmlehB1m
 ```
-
-Used by **pboted** and **Java Bote**
 
 `Email Destination` type can only be determined by the length of the base64 string:
 
@@ -70,11 +70,11 @@ Template:
 `<data format>.<encoded data>`
 
 - data format - Can be (for now):
-  - **b32** (`Base32`)
-  - **b64** (`Base64`) 
+    - **b32** (`Base32`)
+    - **b64** (`Base64`)
 - encoded data - Can be bytes with:
-  - `Email Destination` (*public keys only*)
-  - `Email Identity` (*public and private keys*)
+    - `Email Destination` (*public keys only*)
+    - `Email Identity` (*public and private keys*)
 
 #### `Email Destination` format
 

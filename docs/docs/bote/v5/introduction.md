@@ -18,50 +18,48 @@ If a node runs out of email storage space, and there are no old packets that can
 Below is a diagram of how an email Packet is routed from a sender to a recipient:
 
 ```
-                    .-------.        .-------.        .--------.
-                    | Relay |  --->  | Relay |  --->  | Storer |  --------------------.
-                _   `-------'        `-------'        `--------'                       `\
-                /`                                                                       |
-               /                                                                         |
- .--------.   /     .-------.        .-------.         .--------.                        |
- | Sender |  ---->  | Relay |  --->  | Relay |  --->  | Storer |  -------------.         |
- `--------'   \     `-------'        `-------'         `--------'               `\       |
-               \                                                                  |      |
-               _\/                                                                |      |
-                    .-------.        .-------.        .--------.                  |      |
-                    | Relay |  --->  | Relay |  --->  | Storer |  ------.         |      |
-                    `-------'        `-------'        `--------'         `\       |      |
-                                                                           |      |      |
-                                                                           V      V      V
-
-                                        .--------------- Kademlia DHT -------------------------.
-                                        |                                .---------.           |
-                                        |   .---------.                  | Storage |           |
-                                        |   | Storage |     .---------.  |  Node   |           |
-                                        |   |  Node   |     | Storage |  `---------'           |
-                                        |   `---------'     |  Node   |                        |
-                                        |                   `---------'            .---------. |
-                                        |  .---------.   .---------.               | Storage | |
-                                        |  | Storage |   | Storage |  .---------.  |  Node   | |
-                                        |  |  Node   |   |  Node   |  | Storage |  `---------' |
-                                        |  `---------'   `---------'  |  Node   |              |
-                                        |                             `---------'              |
-                                        `------------------------------------------------------'
-
-                                                                          |      |      |
-                     .-------.        .-------.        .---------.       /       |      |
-                     | Relay |  <---  | Relay |  <---  | Fetcher |  <---'        |      |
-                  /  `-------'        `-------'        `---------'               |      |
-                 /                                                               |      |
-               \/_                                                               |      |
- .-----------.       .-------.        .-------.        .---------.              /       |
- | Recipient |  <--  | Relay |  <---  | Relay |  <---  | Fetcher |  <----------'        |
- `-----------'  _    `-------'        `-------'        `---------'                      |
-               |\                                                                       |
-                 \                                                                      |
-                  \  .-------.        .-------.        .---------.                     /
-                     | Relay |  <---  | Relay |  <---  | Fetcher |  <-----------------'
-                     `-------'        `-------'        `---------'
+                  .-------.      .-------.      .--------.
+                  | Relay | ---> | Relay | ---> | Storer | ----------------.
+               _  `-------'      `-------'      `--------'                  `\
+               /`                                                             |
+              /                                                               |
+ .--------.  /    .-------.      .-------.      .--------.                    |
+ | Sender | ----> | Relay | ---> | Relay | ---> | Storer | -----------.       |
+ `--------'  \    `-------'      `-------'      `--------'             `\     |
+              \                                                          |    |
+              _\/                                                        |    |
+                  .-------.      .-------.      .--------.               |    |
+                  | Relay | ---> | Relay | ---> | Storer | ------.       |    |
+                  `-------'      `-------'      `--------'        `\     |    |
+                                                                    |    |    |
+                                                                    V    V    V
+                              .--------------- Kademlia DHT -------------------------.
+                              |                                .---------.           |
+                              |   .---------.                  | Storage |           |
+                              |   | Storage |     .---------.  |  Node   |           |
+                              |   |  Node   |     | Storage |  `---------'           |
+                              |   `---------'     |  Node   |                        |
+                              |                   `---------'            .---------. |
+                              |  .---------.   .---------.               | Storage | |
+                              |  | Storage |   | Storage |  .---------.  |  Node   | |
+                              |  |  Node   |   |  Node   |  | Storage |  `---------' |
+                              |  `---------'   `---------'  |  Node   |              |
+                              |                             `---------'              |
+                              `------------------------------------------------------'
+                                                                    |    |    |
+                    .-------.      .-------.      .---------.      /     |    |
+                    | Relay | <--- | Relay | <--- | Fetcher | <---'      |    |
+                  / `-------'      `-------'      `---------'            |    |
+                 /                                                       |    |
+               \/_                                                       |    |
+ .-----------.      .-------.      .-------.      .---------.           /     |
+ | Recipient |  <-- | Relay | <--- | Relay | <--- | Fetcher | <--------'      |
+ `-----------'  _   `-------'      `-------'      `---------'                 |
+               |\                                                             |
+                 \                                                            |
+                  \ .-------.      .-------.      .---------.                /
+                    | Relay | <--- | Relay | <--- | Fetcher | <-------------'
+                    `-------'      `-------'      `---------'
 ```
 
 The number of relays for sending or retrieving an email is user-configurable.
@@ -97,5 +95,6 @@ If both sender and recipient chose not to use relays, the diagram looks like thi
  `-----------'
 ```
 
-I2P-Bote uses base64 strings for addresses. They are called [Email Destinations](../../tutorials/terms.md#email-destination) and can be between 86 and 512 characters long, depending on the type of encryption the user chooses.  
+I2P-Bote uses Base32/Base64 strings for addresses.  
+They are called [Email Destinations](../../tutorials/terms.md#email-destination) and can be variable length, depending on the type of encryption the user chooses.  
 For more details see [Cryptography](cryptography.md).

@@ -27,7 +27,7 @@ Part of the Packet is encrypted with the recipient's key.
 | `VER`   | 1 byte     | Protocol version                                                    |
 | `KEY`   | 32 bytes   | DHT key of the Packet, SHA-256 hash of `LEN+DATA`                   |
 | `TIM`   | 8 bytes    | The time the Packet was stored on a storage node (int64)  `[VER 5]` |
-| `DV`    | 32 bytes   | `Delete verification` hash, SHA-256 hash of `DA`                      |
+| `DV`    | 32 bytes   | `Delete verification` hash, SHA-256 hash of `DA`                    |
 | `ALG`   | 1 byte     | ID number of the encryption algorithm used                          |
 | `LEN`   | 2 bytes    | Length of `DATA`                                                    |
 | `DATA`  | byte[] `E` | Data for decryption and `Unencrypted Email Packet`                  |
@@ -38,17 +38,17 @@ ToDo: add info about alg-specific prefixes
 
 Storage format for the `Incomplete Email`
 
-| Field   | Data Type  | Description                                   |
-|---------|------------|-----------------------------------------------|
-| `TYPE`  | 1 byte     | Value = `'U'`                                 |
-| `VER`   | 1 byte     | Protocol version                              |
-| `MSID`  | 32 bytes   | Message ID in binary format                   |
-| `DA`    | 32 bytes   | `Delete authorization` key, randomly generated  |
-| `FRID`  | 2 bytes    | Fragment Index of this Packet (0..`NFR`-1)    |
-| `NFR`   | 2 bytes    | Number of fragments in the email              |
-| `MLEN`  | 2 bytes    | Length of the `CALG+MSG` fields               |
-| `CALG`  | 1 byte     | Compression algorithm (see below)             |
-| `MSG`   | byte[]     | email content (`MLEN` bytes)                  |
+| Field   | Data Type  | Description                                    |
+|---------|------------|------------------------------------------------|
+| `TYPE`  | 1 byte     | Value = `'U'`                                  |
+| `VER`   | 1 byte     | Protocol version                               |
+| `MSID`  | 32 bytes   | Message ID in binary format                    |
+| `DA`    | 32 bytes   | `Delete authorization` key, randomly generated |
+| `FRID`  | 2 bytes    | Fragment Index of this Packet (0..`NFR`-1)     |
+| `NFR`   | 2 bytes    | Number of fragments in the email               |
+| `MLEN`  | 2 bytes    | Length of the `CALG+MSG` fields                |
+| `CALG`  | 1 byte     | Compression algorithm (see below)              |
+| `MSG`   | byte[]     | email content (`MLEN` bytes)                   |
 
 #### Compression algorithms
 
@@ -188,14 +188,14 @@ Contains a `Return Chain` and a payload. The final destination is unknown to the
 
 Used for responding to a `Relayed Data Packet`.
 
-| Field   | Data Type  | Description                                            |
-|---------|------------|--------------------------------------------------------|
-| `PFX`   | 4 bytes    | Packet prefix, must be `0x6D 0x30 0x52 0xE9`           |
-| `TYPE`  | 1 byte     | Value = `'K'`                                          |
-| `VER`   | 1 byte     | Protocol version                                       |
+| Field   | Data Type  | Description                                                     |
+|---------|------------|-----------------------------------------------------------------|
+| `PFX`   | 4 bytes    | Packet prefix, must be `0x6D 0x30 0x52 0xE9`                    |
+| `TYPE`  | 1 byte     | Value = `'K'`                                                   |
+| `VER`   | 1 byte     | Protocol version                                                |
 | `CID`   | 32 bytes   | Correlation ID, used for confirmation between two relay peers. A new correlation ID is set at every hop. |
-| `RET`   | Ret. Chain | A non-empty Return Chain                               |
-| `DLEN`  | 2 bytes    | Length of the `DATA` field in bytes                    |
+| `RET`   | Ret. Chain | A non-empty Return Chain                                        |
+| `DLEN`  | 2 bytes    | Length of the `DATA` field in bytes                             |
 | `DATA`  | byte[] `E` | The payload. AES256-encrypted at every hop in the return chain. |
 
 ### 2.3 Return Chain
@@ -340,13 +340,13 @@ Request to delete an `Email Packet` by DHT key.
 
 `Response Packet` with correct status is expected back `[VER 5]`.
 
-| Field   | Data Type  | Description                                                      |
-|---------|------------|------------------------------------------------------------------|
-| `PFX`   | 4 bytes    | Packet prefix, must be `0x6D 0x30 0x52 0xE9`                     |
-| `TYPE`  | 1 byte     | Value = `'D'`                                                    |
-| `VER`   | 1 byte     | Protocol version                                                 |
-| `CID`   | 32 bytes   | Correlation ID, used for responses                               |
-| `KEY`   | 32 bytes   | DHT key of the Email Packet to delete                            |
+| Field   | Data Type  | Description                                                          |
+|---------|------------|----------------------------------------------------------------------|
+| `PFX`   | 4 bytes    | Packet prefix, must be `0x6D 0x30 0x52 0xE9`                         |
+| `TYPE`  | 1 byte     | Value = `'D'`                                                        |
+| `VER`   | 1 byte     | Protocol version                                                     |
+| `CID`   | 32 bytes   | Correlation ID, used for responses                                   |
+| `KEY`   | 32 bytes   | DHT key of the Email Packet to delete                                |
 | `DA`    | 32 bytes   | `Delete Authorization` (SHA-256 must equal `DV` in the email packet) |
 
 ### 3.5 Index Packet Delete Request
@@ -355,20 +355,20 @@ Request to remove one or more entries (`Email Packet` keys) from an `Index Packe
 
 `Response Packet` with correct status is expected back `[VER 5]`.
 
-| Field   | Data Type  | Description                                                                           |
-|---------|------------|---------------------------------------------------------------------------------------|
-| `PFX`   | 4 bytes    | Packet prefix, must be `0x6D 0x30 0x52 0xE9`                                          |
-| `TYPE`  | 1 byte     | Value = `'X'`                                                                         |
-| `VER`   | 1 byte     | Protocol version                                                                      |
-| `CID`   | 32 bytes   | Correlation ID, used for responses                                                    |
-| `DH`    | 32 bytes   | The `Email Destination` hash of the Index Packet                                        |
-| `N`     | 1 byte     | Number of entries in the Packet                                                       |
-| `DHT1`  | 32 bytes   | First DHT key to remove                                                               |
+| Field   | Data Type  | Description                                                                                 |
+|---------|------------|---------------------------------------------------------------------------------------------|
+| `PFX`   | 4 bytes    | Packet prefix, must be `0x6D 0x30 0x52 0xE9`                                                |
+| `TYPE`  | 1 byte     | Value = `'X'`                                                                               |
+| `VER`   | 1 byte     | Protocol version                                                                            |
+| `CID`   | 32 bytes   | Correlation ID, used for responses                                                          |
+| `DH`    | 32 bytes   | The `Email Destination` hash of the Index Packet                                            |
+| `N`     | 1 byte     | Number of entries in the Packet                                                             |
+| `DHT1`  | 32 bytes   | First DHT key to remove                                                                     |
 | `DA1`   | 32 bytes   | `Delete Authorization` (SHA-256 must equal `DV` in the `Email Packet` referenced by `DHT1`) |
-| `DHT2`  | 32 bytes   | Second DHT key to remove                                                              |
+| `DHT2`  | 32 bytes   | Second DHT key to remove                                                                    |
 | `DA2`   | 32 bytes   | `Delete Authorization` (SHA-256 must equal `DV` in the `Email Packet` referenced by `DHT2`) |
-| ...     | ...        | ...                                                                                   |
-| `DHTn`  | 32 bytes   | n-th DHT key to remove                                                                |
+| ...     | ...        | ...                                                                                         |
+| `DHTn`  | 32 bytes   | n-th DHT key to remove                                                                      |
 | `DAn`   | 32 bytes   | `Delete Authorization` (SHA-256 must equal `DV` in the `Email Packet` referenced by `DHTn`) |
 
 ### 3.6 Find Close Peers

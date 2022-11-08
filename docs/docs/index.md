@@ -23,17 +23,16 @@ Transition to **beta** planned in version **0.9.X**
 - Sending and receiving emails
 - Support for short recipient names (alias)
 - [End-to-End encryption](bote/v5/cryptography/)
-- Runnable as UNIX daemon
-- [CLI utility](https://github.com/polistern/pbotectl) (work in progress)
-- SMTP / POP3 support (tested with [Mozilla Thunderbird](https://www.thunderbird.net/en-US/))
+- Runnable as UNIX daemon and Windows Service
+- Built-in SMTP and POP3 (tested with [Mozilla Thunderbird](https://www.thunderbird.net/en-US/))
 - Delivery confirmation
+- [CLI utility](https://github.com/polistern/pbotectl) (work in progress)
 
-## Planned Features
+### Planned Features
 
 - Custom per identity/user email folders (WIP)
-- Sending email anonymously
 - Sending and receiving via relays (similar to Mixmaster)
-- Interfaces for interaction with third-party applications (IMAP, etc.)
+- Sending email anonymously
 
 ## Resources
 

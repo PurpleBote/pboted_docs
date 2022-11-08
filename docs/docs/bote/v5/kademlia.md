@@ -8,29 +8,43 @@ The Kademlia implementation used by I2P-Bote differs from standard Kademlia in s
 
 There are three types of data that is stored in the DHT:
 
-* Email Packet
-* Index Packet
-* Contact
+* `Email Packet`
+* `Index Packet`
+* `Contact`
 
-## Email Packet
+## Delete Verification
 
-ToDo
+The `Delete Verification` code is the SHA-256 hash of another block of data called the `Delete Authorization` which is encrypted in the `Email Packet` and additionally used as a checksum for verification after decryption of `Email Packet`.
+
+To delete an `Email Packet` or an entry in an `Index Packet` the delete request must contain the correct verification code (the `Delete Verification` hash).
+
+This means no third party can delete the `Email Packet` or item in `Index Packet` until the recipient has decrypted the `Email Packet` and sent out a delete request containing the `Delete Authorization`. 
+
+## Email Packet (encrypted)
+
+`Email Packet` contain full (if size less than 30 KiB) or one part of MIME message with service information for processing, decrypting, and assembling email.
+The DHT key of an `Email Packet` is the SHA-256 hash of the `LEN` and `DATA` fields of `Email Packet`.
+
+To delete an `Email Packet` the delete request must contain the correct verification code (the `Delete Verification` hash).
+
+Note that once a delete request for a given `Email Packet` has been received by a node that is storing the `Email Packet`, the node knows the `Delete Authorization` code and can propagate the delete request to other nodes that don't know yet that the `Email Packet` has been deleted.
 
 ## Index Packet
 
-`Index packets` contain the DHT keys of one or more `email packets`.  
-The DHT key of an `index Packet` is the SHA-256 hash of the `Email Destination` the `email packets` are destined for.   
-To check for new email for a given `Email Destination`, I2P-Bote first queries the DHT for `index packets` for that `Email Destination`, then queries the DHT for all `email Packet` keys in the `index packets`.  
-When a complete set of `email packets` has been received, the email is reconstructed and placed in the `inbox`.
+`Index Packets` contain the DHT keys of one or more `Email Packets`.  
+The DHT key of an `Index Packet` is the SHA-256 hash of the `Email Destination` the `Email Packets` are destined for.
 
-To delete an `email Packet`, or an entry in an `index Packet`, the delete request must contain the correct verification code (the `delete verification` hash).
+To check for new email for a given `Email Destination`, I2P-Bote first queries the DHT for `Index Packets` for that `Email Destination`, then queries the DHT for all `Email Packet` keys in the `Index Packets`.  
+When a complete set of `Email Packets` has been received, the email is reconstructed and placed in the `inbox`.
 
-The verification code is the SHA-256 hash of another block of data called the `delete authorization` which is encrypted in the `email Packet`. This means no third party can delete the Packet until the recipient has decrypted the Packet and sent out a delete request containing the `delete authorization`. 
-
-Note that once a delete request for a given `email Packet` has been received by a node that is storing the `email Packet`, the node knows the `delete authorization` code and can propagate the delete request to other nodes that don't know yet that the Packet has been deleted.
-
-To delete an `index Packet` entry, a `delete verification` hash is required as well. It is the same hash as the one for the `email Packet` which the `index Packet` entry points to.
+To delete an item in `Index Packet` a `Delete Verification` hash is required as well.  
+It is the same hash as the one for the `Email Packet` which the `Index Packet` entry points to.
 
 ## Contact
 
-ToDo
+!! note "Note"
+
+    For now only a part of Java I2P-Bote. WIP
+
+DHT-propagated mapping for `public name` and `Email Destination`.
+It is a decentralized analogue of the local address book.

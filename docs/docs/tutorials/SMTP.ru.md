@@ -2,6 +2,10 @@
 
 _Работа проверена с [Mozilla Thunderbird](https://www.thunderbird.net/en-US/)_
 
+!!! warning "Внимание"
+
+    В данный момент использование SMTP возможно только при заполнении [адресной книги](addressbook.ru.md).
+
 Чтобы иметь возможность отправлять письма по протоколу SMTP Вам нужно:
 
 - Заполнить секцию `[smtp]` в [конфигурационном файле](../user-guide/configuration.md#smtp)
