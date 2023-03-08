@@ -3,12 +3,12 @@ site_url: https://pboted.readthedocs.io
 site_description: pboted documentation
 site_author: polistern
 
-repo_url: https://github.com/PurpleBote/pboted_docs
-repo_name: PurpleBote/pboted_docs
+repo_url: https://github.com/PurpleBote/pboted
+repo_name: PurpleBote/pboted
 
 nav:
 - Home: index.md
-- Beginning:
+- Quick start:
   - Installing: user-guide/install.md
   - Running: user-guide/run.md
   - Configuring: user-guide/configuration.md
@@ -22,28 +22,6 @@ nav:
   - POP3: tutorials/POP3.md
   - Configuring the mail client: tutorials/mail_client.md
   - Control: tutorials/Control.md
-- Bote Protocol:
-  - Version 5:
-    - Description: bote/v5/version5.md
-    - Introduction: bote/v5/introduction.md
-    - Kademlia: bote/v5/kademlia.md
-    - Packet Types: bote/v5/packet_types.md
-    - Protocols: bote/v5/protocols.md
-    - Cryptography: bote/v5/cryptography.md
-  - Version 4:
-    - Introduction: bote/v4/introduction.md
-    - Kademlia: bote/v4/kademlia.md
-    - Packet Types: bote/v4/packet_types.md
-    - Protocols: bote/v4/protocols.md
-    - Algorithms Used By Nodes Locally: bote/v4/algorithms_used_by_nodes_locally.md
-    - Files: bote/v4/files.md
-    - Cryptography: bote/v4/cryptography.md
-    - Glossary of Terms: bote/v4/glossary_of_terms.md
-- About:
-  - Contributing: about/contributing.md
-  - License: about/license.md
-  - Special thanks: about/thanks.md
-  - Donations: about/donations.md
 
 copyright: <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA 4.0</a>, Maintained by <a href="https://github.com/polistern">polistern</a>
 
@@ -58,9 +36,6 @@ plugins:
   - i18n:
       default_language: en
       docs_structure: suffix
-      #no_translation:
-      #  en: "This page isn't translated to English."
-      #  ru: "Эта страница не переведена на Русский."
       languages:
         en:
           name: English
@@ -70,15 +45,10 @@ plugins:
           name: Russian
           build: true
           site_name: pboted
-      #translate_nav:
-      #  en:
-      #    User Guide: "User Guide"
-      #  ru:
-      #    User Guide: "Руководство пользователя"
       nav_translations:
         ru:
           Home: Главная
-          Beginning: Начало работы
+          Quick start: Быстрый старт
           Installing: Установка
           Running: Запуск
           Configuring: Конфигурация
@@ -92,26 +62,16 @@ plugins:
           Configuring the mail client: Настройка почтового клиента
           #Control:
           Building from source: Сборка из исходников
-          Bote Protocol: Протокол Bote
-          Version 5: Версия 5
           Description: Описание
           Glossary of Terms: Словарь терминов
           Introduction: Введение
-          #Kademlia:
-          Packet Types: Типы пакетов
-          Protocols: Протоколы
-          Cryptography: Криптография
-          About: О проекте
-          License: Лицензия
-          Special thanks: Особые благодарности
-          Contributing: Содействие
-          Donations: Пожертвования
 
 theme:
-  name: 'material'
+  name: material
   palette:
     scheme: slate
-    primary: green
+    primary: purple
+  custom_dir: overrides/
   icon:
     repo: fontawesome/brands/github
     admonition:

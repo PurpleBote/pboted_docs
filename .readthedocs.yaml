@@ -6,9 +6,9 @@ build:
     python: "3.9"
 
 mkdocs:
-  configuration: docs/mkdocs.yml
+  configuration: mkdocs.yml
   fail_on_warning: false
 
 python:
   install:
-    - requirements: docs/requirements.txt
+    - requirements: requirements.txt
