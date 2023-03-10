@@ -1,12 +1,12 @@
 # pboted
 
 * [clearnet](https://pboted.readthedocs.io/en/latest/)
-* [I2P](http://polistern.i2p/pbote/)
+* [I2P](http://purplebote.i2p/pbote/)
 
-**pboted** (_Plus Bote Daemon_) - is a standalone C++ implementation of `I2P-Bote` protocol.
+**pboted** (_Plus Bote Daemon_) - is a standalone C++ implementation of `I2P/Bote` protocol.
 
-I2P-Bote is a server-less encrypted [DHT Kademlia](https://en.wikipedia.org/wiki/Distributed_hash_table)-based email protocol.   
-You can find more details about Bote protocol [here](https://bote.readthedocs.io/en/latest/).
+**I2P/Bote** is a server-less encrypted [DHT Kademlia](https://en.wikipedia.org/wiki/Distributed_hash_table)-based email protocol.   
+You can find more details about Bote protocol [here](https://bote.readthedocs.io/en/latest/)([I2P](http://purplebote.i2p/bote/)).
 
 Interaction with the I2P network occurs through the I2P router [SAMv3](https://geti2p.net/en/docs/api/samv3) interface.
 Tested with I2P routers [i2pd](https://github.com/PurpleI2P/i2pd) and [Java I2P](https://github.com/i2p/i2p.i2p).
@@ -22,11 +22,11 @@ Transition to **beta** planned in version **0.9.X**
 
 - Sending and receiving emails
 - Support for short recipient names (alias)
-- [End-to-End encryption](https://bote.readthedocs.io/en/latest/v5/cryptography/)
+- [End-to-End encryption](https://bote.readthedocs.io/en/latest/v5/cryptography/)([I2P](http://purplebote.i2p/bote/v5/cryptography/))
 - Runnable as UNIX daemon and Windows Service
 - Built-in SMTP and POP3 (tested with [Mozilla Thunderbird](https://www.thunderbird.net/en-US/))
 - Delivery confirmation
-- [CLI utility](https://github.com/polistern/pbotectl) (work in progress)
+- [CLI utility](https://github.com/PurpleBote/pbotectl) (work in progress)
 
 ### Planned Features
 
@@ -36,8 +36,8 @@ Transition to **beta** planned in version **0.9.X**
 
 ## Resources
 
-- [Documentation](https://pboted.readthedocs.io/en/latest/)
-- [Tickets/Issues](https://github.com/polistern/pboted/issues)
+- [Documentation](https://pboted.readthedocs.io/en/latest/)([I2P](http://purplebote.i2p/pbote/))
+- [Tickets/Issues](https://github.com/PurpleBote/pboted/issues)([I2P](http://purplebote.i2p/forum/9-issues))
 
 ## Donations
 

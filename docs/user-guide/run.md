@@ -64,7 +64,7 @@ cp contrib/pboted.service ~/.config/systemd/user/pboted.service
 
 ```ini
 [Unit]
-Description=I2P-Bote service written in C++
+Description=I2P/Bote service written in C++
 Documentation=man:pboted(1) https://pboted.readthedocs.io/en/latest/
 After=network.target
 

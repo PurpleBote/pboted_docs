@@ -3,7 +3,7 @@
 You may need the utilities from the [pboted-tools](https://github.com/polistern/pboted-tools/) repository to work with **pboted**.   
 In the near future, this functionality will be implemented as a [CLI utility](https://github.com/polistern/pbotectl).
 
-You can only continue to use your `Email identities` from **Java Bote** if:
+You can only continue to use your `Email identities` from **i2p.i2p-bote** if:
 
 - address is created using the one of the follow algorithm (others are not supported yet):
     - `ECDH-256/ECDSA-256/AES-256/SHA-256`
@@ -16,7 +16,7 @@ You can only continue to use your `Email identities` from **Java Bote** if:
 
     After making changes to `identities.txt` file the application must be restarted
 
-**Email identity** in I2P-Bote network is the equivalent of a **mailbox** in regular email.
+**Email identity** in I2P/Bote network is the equivalent of a **mailbox** in regular email.
 After its creation, you will be able to send and receive emails.
 
 Before you get started, you need to create an email identity yourself.
@@ -67,6 +67,6 @@ See [POP3](../tutorials/POP3.md)
 You can use any third party application that supports **SMTP** and **POP3** protocols.
 
 Be aware that there is significant latency on the **I2P** network.  
-It also adds a delay from the **I2P-Bote** network itself.
+It also adds a delay from the **I2P/Bote** network itself.
 
 Otherwise, any application should treat **pboted** as normal email server.

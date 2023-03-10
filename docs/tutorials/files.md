@@ -17,7 +17,7 @@ The following property keys are currently stored and recognized (N is an integer
 |identityN.text        | Text associated with the `Bote Identity`                                        |
 |identityN.published   | Has the `Bote Identity` been published to the public addressbook?               |
 
-You can find information about `Bote Identity` in [Cryptography](https://bote.readthedocs.io/en/latest/v5/cryptography#2-email-identity-formats) of I2P Bote protocol.
+You can find information about `Bote Identity` in [Cryptography](https://bote.readthedocs.io/en/latest/v5/cryptography#2-email-identity-formats) of I2P/Bote protocol.
 
 The identities file can optionally contain the property key `default`, with its value set to an `Email Destination`.
 

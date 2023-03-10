@@ -10,7 +10,7 @@ Interaction occurs according to JSON-RPC 2.0 protocol.
 
 ### Planned Features:
 
-- authorization/crypt/decrypt
+- authorization/encrypt/decrypt
 - emails management
 - bote identity management
 - aliases management
