@@ -73,7 +73,7 @@ CC=gcc CXX=g++ cmake .
 CC=clang CXX=clang++ cmake .
 ```
 
-### Debian/Ubuntu
+### <a name="debian-ubuntu"></a>Debian/Ubuntu
 
 !!! note "Note"
 
@@ -104,7 +104,7 @@ cd pboted
 debuild --no-tgz-check -us -uc -b
 ```
 
-### CentOS/Fedora
+### <a name="centos-fedora"></a>CentOS/Fedora
 
 !!! note "Note"
 
