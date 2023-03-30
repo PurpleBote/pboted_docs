@@ -23,7 +23,7 @@ For building **pboted** you need several things:
 
 * GNU/Linux
     - [Debian/Ubuntu](#debian-ubuntu) (with packaging)
-    - [CentOS/Fedora] (#centos-fedora) (Fedora 36)
+    - [CentOS/Fedora](#centos-fedora) (Fedora 36)
 
 Make sure you have all required dependencies successfully installed.  
 See for common requirements in [this](#requirements) section.
