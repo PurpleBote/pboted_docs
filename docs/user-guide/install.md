@@ -23,7 +23,7 @@ For building **pboted** you need several things:
 
 * GNU/Linux
     - [Debian/Ubuntu](#debian-ubuntu) (with packaging)
-    - CentOS/Fedora (WIP)
+    - [CentOS/Fedora] (#centos-fedora) (Fedora 36)
 
 Make sure you have all required dependencies successfully installed.  
 See for common requirements in [this](#requirements) section.
@@ -104,9 +104,18 @@ cd pboted
 debuild --no-tgz-check -us -uc -b
 ```
 
-### CentOS/Fedora (WIP)
+### CentOS/Fedora
 
-WIP
+!!! note "Note"
+
+    Tested with Fedora 36
+
+Install required tools and libraries:
+
+```bash
+sudo dnf install cmake mimetic boost g++ boost-devel mimetic-devel
+```
+
 
 ### Microsoft Windows
 
