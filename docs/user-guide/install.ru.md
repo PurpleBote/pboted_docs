@@ -1,6 +1,8 @@
 # Установка
 
-## Debian/Ubuntu
+## Из предварительно скомпилированных файлов
+
+### Debian/Ubuntu
 
 Вы можете установить готовый пакет со [страницы последнего релиза](https://github.com/polistern/pboted/releases/latest).
 
@@ -17,13 +19,13 @@
 * openssl >= 1.1.1
 * zlib (openssl уже имеет её в зависимостях)
 
-## Сборка на UNIX-подобных системах
+### Сборка на UNIX-подобных системах
 
 **Поддерживаемые системы:**
 
 * GNU/Linux
     - [Debian/Ubuntu](#debian-ubuntu) (с созданием пакета)
-    - CentOS/Fedora (WIP)
+    - [CentOS/Fedora](#centos-fedora) (Fedora 36)
 
 Убедитесь, что все требуемые зависимости установлены.  
 Ознакомтесь с зависимостями в [этой](#Требования) секции.
@@ -43,7 +45,7 @@ cmake <cmake options> . # Смотри секцию "Опции CMake" ниже
 make                    # Для отладки можно добавить VERBOSE=1
 ```
 
-### Опции CMake
+#### Опции CMake
 
 Доступные опции CMake (каждая опция имеет вид `-D<key>=<value>`, больше информации в `man 1 cmake`):
 
@@ -64,19 +66,19 @@ make                    # Для отладки можно добавить VERB
 cmake -L
 ```
 
-#### Принудительно использовать GCC
+##### Принудительно использовать GCC
 
 ```bash
 CC=gcc CXX=g++ cmake .
 ```
 
-#### Принудительно использовать Clang
+##### Принудительно использовать Clang
 
 ```bash
 CC=clang CXX=clang++ cmake .
 ```
 
-### Debian/Ubuntu
+#### <a name="debian-ubuntu"></a>Debian/Ubuntu
 
 !!! note "Примечание"
 
@@ -107,9 +109,17 @@ cd pboted
 debuild --no-tgz-check -us -uc -b
 ```
 
-### CentOS/Fedora (WIP)
+#### <a name="centos-fedora"></a>CentOS/Fedora
 
-WIP
+!!! note "Note"
+
+    Проверено на Fedora 36
+
+Установите необходимые утилиты и зависимости:
+
+```bash
+sudo dnf install cmake mimetic boost g++ boost-devel mimetic-devel
+```
 
 ### Microsoft Windows
 

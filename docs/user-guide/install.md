@@ -1,6 +1,8 @@
 # Installing
 
-## Debian/Ubuntu
+## From precompiled binaries
+
+### Debian/Ubuntu
 
 You can install binary packages from the [latest release page](https://github.com/polistern/pboted/releases/latest).
 
@@ -17,7 +19,7 @@ For building **pboted** you need several things:
 * openssl >= 1.1.1
 * zlib (openssl already depends on it)
 
-## Building on UNIX-like systems
+### Building on UNIX-like systems
 
 **Supported systems:**
 
@@ -43,7 +45,7 @@ cmake <cmake options> . # See "CMake Options" section below
 make                    # You may add VERBOSE=1 to cmdline for debugging
 ```
 
-### CMake Options
+#### CMake Options
 
 Available CMake options(each option has a form of `-D<key>=<value>`, for more information see `man 1 cmake`):
 
@@ -61,19 +63,19 @@ Also there is `-L` flag for CMake that could be used to list current cached opti
 cmake -L
 ```
 
-#### Force GCC
+##### Force GCC
 
 ```bash
 CC=gcc CXX=g++ cmake .
 ```
 
-#### Force Clang
+##### Force Clang
 
 ```bash
 CC=clang CXX=clang++ cmake .
 ```
 
-### <a name="debian-ubuntu"></a>Debian/Ubuntu
+#### <a name="debian-ubuntu"></a>Debian/Ubuntu
 
 !!! note "Note"
 
@@ -104,7 +106,7 @@ cd pboted
 debuild --no-tgz-check -us -uc -b
 ```
 
-### <a name="centos-fedora"></a>CentOS/Fedora
+#### <a name="centos-fedora"></a>CentOS/Fedora
 
 !!! note "Note"
 
@@ -115,7 +117,6 @@ Install required tools and libraries:
 ```bash
 sudo dnf install cmake mimetic boost g++ boost-devel mimetic-devel
 ```
-
 
 ### Microsoft Windows
 
